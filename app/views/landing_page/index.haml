@@ -1,4 +1,38 @@
 .landing_background
   .banner
-    Anderson Glass
+    Anderson
+    %span{class:'light-blue'}
+      Glass
     .slogan Your Worry Free Solution
+  .call_to_action
+    %button{class:"btn btn-primary btn-lg", type:"submit"} Get A Quote
+.main_slider
+  = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
+  = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
+.row
+  .col-md-6
+    .location_thumbnail
+      .location_title Your Home
+      .image_wrapper
+        = image_tag("home.svg", size:'150x150', class: "location_hero_icon")
+  .col-md-6
+    .location_thumbnail
+      .location_title Your Business
+      .image_wrapper
+        = image_tag("store.svg", size:'150x150', class: "location_hero_icon")
+
+.row
+  .col-md-6{class:'text-center'}
+    Residential
+  .col-md-6{class:'text-center'}
+    Commercial
