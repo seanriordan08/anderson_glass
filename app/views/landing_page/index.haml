@@ -1,11 +1,9 @@
-.landing_background
-  .banner
-    Anderson
-    %span{class:'light-blue'}
-      Glass
-    .slogan Your Worry Free Solution
-  .call_to_action
-    %button{class:"btn btn-primary btn-lg", type:"submit"} Get A Quote
+.bg
+.jumbotron
+  %h1 Hello, world!
+  %p
+  %p
+    %a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Learn more
 .main_slider
   = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
@@ -36,3 +34,13 @@
     Residential
   .col-md-6{class:'text-center'}
     Commercial
+
+:javascript
+  var jumboHeight = $('.jumbotron').outerHeight();
+  function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+  }
+  $(window).scroll(function(e){
+    parallax();
+  });
