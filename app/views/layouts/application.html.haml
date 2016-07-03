@@ -11,17 +11,28 @@
 
     %link{href:'https://fonts.googleapis.com/css?family=Kameron', rel:'stylesheet', type:'text/css'}
     = csrf_meta_tags
-  %body{style: "padding-bottom: 50px; background-image: url('/assets/shattered.png')"}
+  %body{style: "padding-bottom: 74px; background-image: url('/assets/shattered.png')"}
     = yield
   %nav.navbar.navbar-default.navbar-fixed-bottom
-    .container
-      %ul
-        %li CONTACT US TODAY
-        %li Phone (908)735-8333
-        %li Fax (908)735-2999
-        %li Electronic mail
-        %li General Information: marytherese@andersonglasscompany.com
-        %li Sales: kevin@andersonglasscompany.com
-        %li Postal address:
-        %li 5 Woods Edge Court
-        %li Pittstown, NJ 08867
+    .containment{style: 'margin: 10px; overflow: auto;'}
+      .col-sm-12.col-md-offset-1.col-md-3.col-lg-3
+        %span
+          %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+            %span{class:"glyphicon glyphicon glyphicon-phone-alt", style: 'font-size: 32px;'}
+          %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
+            %li Phone (908)735-8333
+            %li Fax (908)735-2999
+      .col-sm-12.col-md-5.col-lg-4
+        %span
+          %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+            %span{class:"glyphicon glyphicon glyphicon glyphicon-envelope", style: 'font-size: 32px;'}
+          %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
+            %li Info: marytherese@andersonglasscompany.com
+            %li Sales: kevin@andersonglasscompany.com
+      .col-sm-12.col-md-3.col-lg-3
+        %span
+          %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+            %span{class:"glyphicon glyphicon glyphicon glyphicon glyphicon-map-marker", style: 'font-size: 32px;'}
+          %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
+            %li 5 Woods Edge Court
+            %li Pittstown, NJ 08867
