@@ -1,9 +1,10 @@
 .bg
 .jumbotron
-  %h1 Hello, world!
+  %h1
+    %span AndersonGlass
   %p
   %p
-    %a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Learn more
+    %a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Get A Quote
 .main_slider
   = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
@@ -17,23 +18,49 @@
   = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
-.row
-  .col-md-6
-    .location_thumbnail
-      .location_title Your Home
-      .image_wrapper
-        = image_tag("home.svg", size:'150x150', class: "location_hero_icon")
-  .col-md-6
-    .location_thumbnail
-      .location_title Your Business
-      .image_wrapper
-        = image_tag("store.svg", size:'150x150', class: "location_hero_icon")
 
-.row
-  .col-md-6{class:'text-center'}
-    Residential
-  .col-md-6{class:'text-center'}
-    Commercial
+.row.section_high_level
+  .col-sm-6
+    .thumbnail
+      = image_tag("home.svg", size:'150x150', class: "circle_hover")
+      .caption
+        %h3 Residential
+        %p
+          Specializing in frameless shower enclosures
+          Custom shower doors
+          Tub enclosures
+          Beveling
+          Tempered glass
+          Insulated glass
+          Table tops
+          Mirrors
+        %p
+          %a.btn.btn-primary{:href => "#", :role => "button"} Button
+          %a.btn.btn-default{:href => "#", :role => "button"} Button
+  .col-sm-6
+    .thumbnail
+      = image_tag("store.svg", size:'150x150', class: "circle_hover")
+      .caption
+        %h3 Commercial
+        %p
+          Storefronts
+          Curtain walls
+          Automatic doors
+          Glass Entrances and doors
+          Custom glass walls, interior and exterior
+          Total glass doors
+          Glass railings
+          Insulated glass
+          Laminated glass
+          Tempered glass
+          Aluminum panels
+        %p
+          %a.btn.btn-primary{:href => "#", :role => "button"} Button
+          %a.btn.btn-default{:href => "#", :role => "button"} Button
+
+
+
+
 
 :javascript
   var jumboHeight = $('.jumbotron').outerHeight();
