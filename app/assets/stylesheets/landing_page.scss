@@ -1,13 +1,14 @@
-// Place all the styles related to the LandingPage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
+//https://coolors.co/app/00425c-698ea3-fc7d00-f2f2f2-20252b
 $primary-color: #00425C;
 $secondary-color: #698EA3;
 $accent-color: #FC7D00;
 $white-color: #F2F2F2;
 $black-color: #20252B;
 
+
+.light-blue {
+  color: $secondary-color;
+}
 
 .bg {
   position: fixed;
@@ -46,10 +47,6 @@ body .jumbotron {
   }
 }
 
-.light-blue {
-  color: $secondary-color;
-}
-
 .call_to_action {
   position: relative;
   top: 20%;
@@ -62,6 +59,7 @@ body .jumbotron {
   vertical-align: top;
   height: 200px;
   box-shadow: 0 0 20px 1px #555;
+  background-color: transparent;
   .main_slider_image {
     width: 150px;
     padding: 2px;
@@ -94,20 +92,32 @@ body .jumbotron {
   }
 }
 
-.thumbnail img.circle_hover {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  padding-top: 20px;
-  text-align: center;
-  border-radius: 100px;
-  transition: .2s;
-  &:hover {
-    background: #777;
-    transition: .1s;
-  }
-}
 .section_high_level {
   padding-top: 20px;
 }
+
+.thumbnail {
+  text-align: center;
+  background-color: $secondary-color;
+  img.circle_hover {
+    display: inline-block;
+    width: 140px;
+    height:140px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+      background: #777;
+      transition: .1s;
+    }
+  }
+  ul {
+    li {
+      background: #555;
+    }
+  }
+}
+
 
