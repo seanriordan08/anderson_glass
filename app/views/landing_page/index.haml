@@ -22,7 +22,8 @@
 .row.section_high_level
   .col-lg-offset-2.col-sm-6.col-lg-4
     .thumbnail
-      = image_tag("home.svg", size:'120x120', class: "circle_hover")
+      .circle_hover
+        = image_tag("home.svg", size:'120x120')
       .caption
         %h3 Residential
         %p
@@ -39,7 +40,8 @@
           %a.btn.btn-default{:href => "#", :role => "button"} Button
   .col-sm-6.col-lg-4
     .thumbnail
-      = image_tag("store.svg", size:'120x120', class: "circle_hover")
+      .circle_hover
+        = image_tag("store.svg", size:'120x120')
       .caption
         %h3 Commercial
         %p
