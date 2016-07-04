@@ -70,8 +70,8 @@
     %hr
   .col-sm-6
     .location_content
-  .col-sm-6
-    %iframe{id:'map'}
+  .col-sm-6{style:'height: 400px;'}
+    %div{id:'map', style:'height: 400px;'}
     %script{:async => '', :defer => '', src:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4MvYs0ac42irOI1cOFgQCGixjyHro0Q&callback=initMap'}
 
 
@@ -84,4 +84,8 @@
   }
   $(window).scroll(function(e){
     parallax();
+  });
+
+  $(document).on('ready', function(){
+    initMap();
   });
