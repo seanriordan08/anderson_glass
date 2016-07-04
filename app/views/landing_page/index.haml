@@ -2,7 +2,7 @@
 .jumbotron
   %h1
     %span AndersonGlass
-  .description Custom Glass & Installation
+  .description Custom Glass & Installations
   %p
     %a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Get A Quote
 .main_slider
@@ -20,6 +20,9 @@
   = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
 
 .row.section_high_level
+  %h1.section_header_dark Describe Your Project
+  .container
+    %hr
   .col-lg-offset-2.col-sm-6.col-lg-4
     .thumbnail
       .circle_hover
@@ -57,8 +60,19 @@
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
 .row.section_quality
+  %h1.section_header Quality
+  .container
+    %hr
 
-
+.row.section_location
+  %h1.section_header Locations
+  .container
+    %hr
+  .col-sm-6
+    .location_content
+  .col-sm-6
+    %iframe{id:'map'}
+    %script{:async => '', :defer => '', src:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4MvYs0ac42irOI1cOFgQCGixjyHro0Q&callback=initMap'}
 
 
 

@@ -18,7 +18,9 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-html .body{
+html body{
   width: 100%;
   background: image-url('shattered_blue.png') repeat;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
