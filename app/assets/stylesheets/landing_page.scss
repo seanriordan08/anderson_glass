@@ -93,15 +93,17 @@ body .jumbotron {
 }
 
 .section_high_level {
-  padding-top: 20px;
+  padding: 20px;
 }
 .thumbnail {
   text-align: center;
   background-color: $secondary-color;
+  border: 1px solid #333;
   .circle_hover {
     display: inline-block;
     width: 140px;
     height: 140px;
+    margin-top: 10px;
     text-align: center;
     border: 1px solid #333;
     border-radius: 100px;

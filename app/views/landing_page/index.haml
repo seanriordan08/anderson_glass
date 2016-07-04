@@ -26,15 +26,41 @@
         = image_tag("home.svg", size:'120x120')
       .caption
         %h3 Residential
-        %p
-          Specializing in frameless shower enclosures
-          Custom shower doors
-          Tub enclosures
-          Beveling
-          Tempered glass
-          Insulated glass
-          Table tops
-          Mirrors
+        .iso_table{style:'display: block; clear:both; overflow: auto'}
+          %table{style:'width:70%; float:left; margin: 20px 0; text-align: right'}
+            %tr{style:'background-color: #ddd'}
+              %td{style:'float: left'} Frameless shower enclosures
+            %tr
+              %td{style:'float: left; text-align: right'} Custom shower doors
+            %tr{style:'background-color: #ddd'}
+              %td{style:'float: left'} Tub enclosures
+            %tr
+              %td{style:'float: left; text-align: right'} Beveling
+            %tr{style:'background-color: #ddd'}
+              %td{style:'float: left'} Tempered glass
+            %tr
+              %td{style:'float: left'} Insulated glass
+            %tr{style:'background-color: #ddd'}
+              %td{style:'float: left'} Table tops
+            %tr
+              %td{style:'float: left'} Mirrors
+          %table{style:'float:right; margin: 20px 0; text-align: right'}
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
+            %tr
+              %td{style:'float: right'} Yes
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
