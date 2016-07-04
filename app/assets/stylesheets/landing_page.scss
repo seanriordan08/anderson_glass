@@ -1,13 +1,17 @@
 //https://coolors.co/app/00425c-698ea3-fc7d00-f2f2f2-20252b
-$primary-color: #00425C;
-$secondary-color: #698EA3;
-$accent-color: #FC7D00;
-$white-color: #F2F2F2;
-$black-color: #20252B;
+$anderson-darkblue: #00425C;
+$anderson-lightblue: #698EA3;
+$anderson-orange: #FC7D00;
+$anderson-white: #F2F2F2;
+$anderson-black: #20252B;
 
 
 .light-blue {
-  color: $secondary-color;
+  color: $anderson-lightblue;
+}
+
+.light-gray {
+  background-color: #ddd;
 }
 
 .bg {
@@ -28,12 +32,22 @@ body .jumbotron {
   background:transparent;
   z-index: 1;
   span {
-    color: whitesmoke;
+    color: $anderson-white;
     text-shadow: 1px 1px 2px #333;
   }
   p a {
-    color: whitesmoke;
+    color: $anderson-white;
   }
+}
+
+.description {
+  position: relative;
+  top: -15px;
+  color: $anderson-white;
+  text-align: center;
+  text-shadow: 1px 1px 2px #333;
+  @media screen and (max-width: 600px) { font-size: 18px; }
+  @media screen and (min-width: 601px) { font-size: 32px; }
 }
 
 .banner {
@@ -97,7 +111,7 @@ body .jumbotron {
 }
 .thumbnail {
   text-align: center;
-  background-color: $secondary-color;
+  background-color: $anderson-lightblue;
   border: 1px solid #333;
   .circle_hover {
     display: inline-block;
@@ -121,5 +135,12 @@ body .jumbotron {
     }
   }
 }
+.caption .table_wrapper:first-child {
+  color: transparent;
+}
 
+.section_quality {
+  height: 600px;
+  background-color: $anderson-orange;
+}
 

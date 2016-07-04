@@ -2,7 +2,7 @@
 .jumbotron
   %h1
     %span AndersonGlass
-  %p
+  .description Custom Glass & Installation
   %p
     %a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Get A Quote
 .main_slider
@@ -26,41 +26,15 @@
         = image_tag("home.svg", size:'120x120')
       .caption
         %h3 Residential
-        .iso_table{style:'display: block; clear:both; overflow: auto'}
+        .table_wrapper{style:'overflow: auto'}
           %table{style:'width:70%; float:left; margin: 20px 0; text-align: right'}
-            %tr{style:'background-color: #ddd'}
-              %td{style:'float: left'} Frameless shower enclosures
-            %tr
-              %td{style:'float: left; text-align: right'} Custom shower doors
-            %tr{style:'background-color: #ddd'}
-              %td{style:'float: left'} Tub enclosures
-            %tr
-              %td{style:'float: left; text-align: right'} Beveling
-            %tr{style:'background-color: #ddd'}
-              %td{style:'float: left'} Tempered glass
-            %tr
-              %td{style:'float: left'} Insulated glass
-            %tr{style:'background-color: #ddd'}
-              %td{style:'float: left'} Table tops
-            %tr
-              %td{style:'float: left'} Mirrors
+            - @residential_services.each do |service|
+              %tr{class:"#{cycle('','light-gray')}"}
+                %td{style:'float: left'}= service
           %table{style:'float:right; margin: 20px 0; text-align: right'}
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
-            %tr
-              %td{style:'float: right'} Yes
+            - @residential_services.size.times do
+              %tr{class:"#{cycle('','light-gray')}"}
+                %td{style:'float: right'} Yes
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
@@ -70,21 +44,19 @@
         = image_tag("store.svg", size:'120x120')
       .caption
         %h3 Commercial
-        %p
-          Storefronts
-          Curtain walls
-          Automatic doors
-          Glass Entrances and doors
-          Custom glass walls, interior and exterior
-          Total glass doors
-          Glass railings
-          Insulated glass
-          Laminated glass
-          Tempered glass
-          Aluminum panels
+        .table_wrapper{style:'overflow: auto'}
+          %table{style:'width:70%; float:left; margin: 20px 0; text-align: right'}
+            - @commercial_services.each do |service|
+              %tr{class:"#{cycle('','light-gray')}"}
+                %td{style:'float: left'}= service
+          %table{style:'float:right; margin: 20px 0; text-align: right'}
+            - @commercial_services.size.times do
+              %tr{class:"#{cycle('','light-gray')}"}
+                %td{style:'float: right'} Yes
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
+.row.section_quality
 
 
 
