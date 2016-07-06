@@ -1,10 +1,10 @@
 
 var map;
-var myLatLng = {lat: 61.219600, lng: -149.893200};
+var myLatLng = {lat: 40.603624, lng: -74.961102};
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
-    zoom: 17
+    zoom: 13
   });
 
   var customMapType = new google.maps.StyledMapType([
@@ -25,11 +25,11 @@ function initMap() {
     {
       featureType: 'poi',
       elementType: 'geometry',
-      stylers: [{color: '#935c37'}]
+      stylers: [{color: '#B6D094'}]
     },
     {
       featureType: 'water',
-      stylers: [{color: '#353535'}]
+      stylers: [{color: '#698EA3'}]
     }
   ], {
     name: 'Custom Style'
@@ -40,16 +40,16 @@ function initMap() {
 
   var contentString = '<div id="content">'+
     '<div id="siteNotice"></div>'+
-    '<h1 id="firstHeading" class="firstHeading">New Brown Bag Sandwich Co-ordinates</h1>'+
+    '<h1 id="firstHeading" class="firstHeading">Anderson Glass</h1>'+
     '<div id="bodyContent">'+
-    '<p>The <b>Brown Bag Sandwich Co.</b>, also referred to as <b>BBSC</b>, outgrew its shell '+
-    'and found a more suitable place to call it\'s digs. '+
-    'We\'re back in business, and excited to exceed the high standards of quality '+
-    'and convenience our customers have come to expect and <3'+
+    '<p>Have a glass project? Anderson Glass LLC is your worry free solution. '+
+    'Up to date with shower and bath industry trends and providing the '+
+    'very best in glass and hardware products, Anderson Glass will '+
+    'help increase your home’s value and your enjoyment.'+
     '</div>'+
     '</div>';
 
-  var infowindow = new google.maps.InfoWindow({
+    var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
 
