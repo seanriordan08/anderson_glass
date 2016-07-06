@@ -37,9 +37,9 @@
                 %td{style:'float: left'}= service
           %table{style:'float:right; margin: 20px 0; text-align: right'}
             - @residential_services.size.times do
-              %tr{class:"#{cycle('','light-gray')}"}
+              %tr
                 %td{style:'float: right'}
-                  %span{class:'glyphicon glyphicon-ok'} Yes
+                  %span{class:'glyphicon glyphicon-ok-sign'}
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
@@ -56,9 +56,9 @@
                 %td{style:'float: left'}= service
           %table{style:'float:right; margin: 20px 0; text-align: right'}
             - @commercial_services.size.times do
-              %tr{class:"#{cycle('','light-gray')}"}
+              %tr
                 %td{style:'float: right'}
-                  %span{class:'glyphicon glyphicon-ok'} Yes
+                  %span{class:'glyphicon glyphicon-ok-sign'}
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
