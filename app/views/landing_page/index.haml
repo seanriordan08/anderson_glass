@@ -19,11 +19,12 @@
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
 
-.row.section_wrapper
+.row.section_wrapper{style:'height: 800px'}
   %h1.section_header_dark Describe Your Project
   .container
     %hr
-  .col-lg-offset-2.col-sm-6.col-lg-4
+  %br\
+  .col-sm-6.col-lg-offset-2.col-lg-4
     .thumbnail
       .circle_hover
         = image_tag("home.svg", size:'120x120')
@@ -61,10 +62,12 @@
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
+
 .row.section_wrapper.orange
   %h1.section_header Craftsmanship
   .container
     %hr
+  %br\
   .col-sm-12.col-md-6
     .section_content
       A growing number of architects, contractors and owners continue to rely on Anderson Glass’
@@ -75,12 +78,15 @@
       At Anderson Glass, we are committed to integrity, quality and professionalism on every project,
       whether it be in your home or business location.  Call us today at 908-735-8333.
   .col-sm-12.col-md-6{style:'height: 400px;'}
-    = image_tag("quality.jpeg")
+    .faded_container
+      = image_tag("quality.jpeg", size:'', class:'faded')
+      .after
 
 .row.section_wrapper.black
   %h1.section_header Locations
   .container
     %hr
+  %br\
   .col-sm-12.col-md-6{style:'height: 400px;'}
     %div{id:'map', style:'height: 400px;'}
     %script{:async => '', :defer => '', src:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4MvYs0ac42irOI1cOFgQCGixjyHro0Q&callback=initMap'}
@@ -104,8 +110,4 @@
   }
   $(window).scroll(function(e){
     parallax();
-  });
-
-  $(document).on('ready', function(){
-    initMap();
   });

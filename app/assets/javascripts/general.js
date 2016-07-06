@@ -1,5 +1,6 @@
 
-$(document).ready(function(){
+$(document).on('ready', function(){
+
   $('.main_slider').slick({
     slidesToShow: 10,
     slidesToScroll: 1,
@@ -10,4 +11,5 @@ $(document).ready(function(){
     cssEase: 'linear',
     pauseOnHover: true
   });
+
 });
