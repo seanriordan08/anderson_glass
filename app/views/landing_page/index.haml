@@ -19,7 +19,7 @@
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
 
-.row.section_high_level
+.row.section_wrapper
   %h1.section_header_dark Describe Your Project
   .container
     %hr
@@ -37,7 +37,8 @@
           %table{style:'float:right; margin: 20px 0; text-align: right'}
             - @residential_services.size.times do
               %tr{class:"#{cycle('','light-gray')}"}
-                %td{style:'float: right'} Yes
+                %td{style:'float: right'}
+                  %span{class:'glyphicon glyphicon-ok'} Yes
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
@@ -55,24 +56,43 @@
           %table{style:'float:right; margin: 20px 0; text-align: right'}
             - @commercial_services.size.times do
               %tr{class:"#{cycle('','light-gray')}"}
-                %td{style:'float: right'} Yes
+                %td{style:'float: right'}
+                  %span{class:'glyphicon glyphicon-ok'} Yes
         %p
           %a.btn.btn-primary{:href => "#", :role => "button"} Button
           %a.btn.btn-default{:href => "#", :role => "button"} Button
-.row.section_quality
-  %h1.section_header Quality
+.row.section_wrapper.orange
+  %h1.section_header Craftsmanship
   .container
     %hr
+  .col-sm-12.col-md-6
+    .section_content
+      A growing number of architects, contractors and owners continue to rely on Anderson Glass’
+      commercial glazing for the best in lead times, full compliance with architectural specifications,
+      and quality products and installations that you will be proud of.
+      %br/
+      %br/
+      At Anderson Glass, we are committed to integrity, quality and professionalism on every project,
+      whether it be in your home or business location.  Call us today at 908-735-8333.
+  .col-sm-12.col-md-6{style:'height: 400px;'}
+    = image_tag("quality.jpeg")
 
-.row.section_location
+.row.section_wrapper.black
   %h1.section_header Locations
   .container
     %hr
-  .col-sm-6
-    .location_content
-  .col-sm-6{style:'height: 400px;'}
+  .col-sm-12.col-md-6{style:'height: 400px;'}
     %div{id:'map', style:'height: 400px;'}
     %script{:async => '', :defer => '', src:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4MvYs0ac42irOI1cOFgQCGixjyHro0Q&callback=initMap'}
+  .col-sm-12.col-md-6
+    .section_content
+      Anderson Glass services clients in towns across New Jersey such as Annandale, Bedminster,
+      Berkeley Heights, Bernardsville, Chatham, Clinton, Far Hills, Flemington, Maplewood, Millburn,
+      New Providence, Pittstown, Short Hills, Summit, Tewksbury, Westfield and surrounding towns.
+      %br/
+      %br/
+      Anderson Glass manufactures and fabricates in Hunterdon County, NJ and services Essex, Hunterdon,
+      Morris, Union and Somerset county and surrounding townships.
 
 
 
