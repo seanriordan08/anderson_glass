@@ -1,8 +1,8 @@
 ---
 deploy_user: deployer
 gh_pubkey_user: seanriordan08
-domain_name: seanvelope.com
+domain_name: 104.236.240.178
 rails_env: production
-webserver_name: seanvelope.com
+webserver_name: 104.236.240.178
 mysql_root_password: root
 mysql_db_password: root
