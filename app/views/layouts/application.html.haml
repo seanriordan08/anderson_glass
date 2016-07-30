@@ -12,5 +12,7 @@
     %link{href:'https://fonts.googleapis.com/css?family=Kameron', rel:'stylesheet', type:'text/css'}
     = csrf_meta_tags
   %body{style: "padding-bottom: 74px; background-image: image-url('shattered_blue.png')"}
+    %p{class:"notice"}= notice
+    %p{class:"alert"}= alert
     = yield
   = render partial: 'layouts/footer'
