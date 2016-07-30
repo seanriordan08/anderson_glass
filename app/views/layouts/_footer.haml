@@ -27,6 +27,6 @@
         %ul{style: 'display: inline-block; width: 100%; padding: 0 10px; text-align: right; list-style-type: none; vertical-align: middle'}
           %li
             - if signed_in?
-              = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+              = link_to("Hi #{current_user.first_name.capitalize}! Sign Out", destroy_user_session_path, :method => :delete)
             - else
               = link_to('Sign In', new_user_session_path)

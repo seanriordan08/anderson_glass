@@ -6,11 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = %w(jim bob tom sally)
+first_names = %w(jim bob tom sally)
+last_names = %w(smith johnson reynolds shears)
+raise "First names must all have last names!" unless (first_names.size == last_names.size)
 
-users.each do |u|
+first_names.each_with_index do |first_name, index|
   User.create_with(
-    email: "#{u}@example.com",
+    first_name: first_name,
+    last_name: last_names[index],
+    email: "#{first_name}@example.com",
     password: 'password'
-  ).find_or_create_by!(email: "#{u}@example.com")
+  ).find_or_create_by!(email: "#{first_name}@example.com")
 end
