@@ -25,4 +25,8 @@
     .col-sm-12{class: "login", style: 'padding: 0'}
       %span
         %ul{style: 'display: inline-block; width: 100%; padding: 0 10px; text-align: right; list-style-type: none; vertical-align: middle'}
-          %li= link_to 'Login', root_path
+          %li
+            - if signed_in?
+              = link_to('Sign Out', destroy_user_session_path, :method => :delete)
+            - else
+              = link_to('Sign In', new_user_session_path)
