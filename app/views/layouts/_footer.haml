@@ -2,27 +2,27 @@
   .containment{style: 'margin: 10px; overflow: auto;'}
     .col-sm-12.col-md-offset-1.col-md-3.col-lg-3
       %span
-        %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+        %button{type:"button", id: "contact-phone", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
           %span{class:"glyphicon glyphicon glyphicon-phone-alt", style: 'font-size: 32px;'}
         %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
           %li Phone (908)735-8333
           %li Fax (908)735-2999
     .col-sm-12.col-md-5.col-lg-4
       %span
-        %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+        %button{type:"button", id: "contact-email", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
           %span{class:"glyphicon glyphicon glyphicon glyphicon-envelope", style: 'font-size: 32px;'}
         %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
           %li Info: marytherese@andersonglasscompany.com
           %li Sales: kevin@andersonglasscompany.com
     .col-sm-12.col-md-3.col-lg-3
       %span
-        %button{type:"button", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
+        %button{type:"button", id: "contact-addy", class:"btn btn-default btn-lg", style: 'display: inline-block; vertical-align: middle'}
           %span{class:"glyphicon glyphicon glyphicon glyphicon glyphicon-map-marker", style: 'font-size: 32px;'}
         %ul{style: 'display: inline-block; list-style-type: none; vertical-align: middle'}
           %li 5 Woods Edge Court
           %li Pittstown, NJ 08867
   .info_strip{style: 'margin: 0; padding-top: 7px; background-color: #aaa; overflow: auto;'}
-    .col-sm-12{style: 'padding: 0'}
+    .col-sm-12{class: "login", style: 'padding: 0'}
       %span
-        %ul{style: 'display: inline-block; width: 100%; padding: 0 10px; list-style-type: none; vertical-align: middle'}
-          %li Phone (908)735-8333
+        %ul{style: 'display: inline-block; width: 100%; padding: 0 10px; text-align: right; list-style-type: none; vertical-align: middle'}
+          %li= link_to 'Login', root_path
