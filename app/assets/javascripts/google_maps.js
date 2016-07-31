@@ -5,7 +5,7 @@ var myLatLng = {lat: 40.603624, lng: -74.961102};
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
-    zoom: 13
+    zoom: 9
   });
 
   var customMapType = new google.maps.StyledMapType([
