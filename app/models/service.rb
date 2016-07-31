@@ -1,11 +1,11 @@
 class Service < ActiveRecord::Base
 
-  def self.get_residential_services
-    ['Frameless shower enclosures','Custom shower doors','Tub enclosures','Beveling','Tempered glass','Insulated glass','Table tops','Mirrors', 'Laminated glass']
-  end
-
-  def self.get_commercial_services
-    ['Storefronts', 'Curtain walls', 'Automatic doors', 'Glass Entrances and doors', 'Custom glass walls', 'Total glass doors', 'Glass railings', 'Tempered glass', 'Aluminum panels']
+  def self.get_service_descriptions(market_type)
+    service_descriptions = []
+    Service.where(market_type: market_type).find_each do |service|
+      service_descriptions << service.description
+    end
+    service_descriptions
   end
 
 end
