@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: anderson_glass_production
-  username: anderson_glass
+  database: anderson_glass
+  username: root
   password: <%= ENV['ANDERSON_GLASS_DATABASE_PASSWORD'] %>
