@@ -45,7 +45,7 @@ $anderson-black: #20252B;
 body .bg {
   position: fixed;
   width: 100%;
-  height: 400px; /*same height as jumbotron */
+  height: 450px; /*same height as jumbotron */
   background: image-url('new_york.jpeg') no-repeat center center;
   @media screen and (min-width: 1497px) { background-size: cover; }
   top: 0;
@@ -55,17 +55,18 @@ body .bg {
 
 body .jumbotron {
   width: 100%;
-  height: 400px;
+  height: 450px;
   margin-bottom: 0;
   text-align: center;
   background: transparent;
   z-index: 1;
-  span {
-    color: $anderson-white;
-    text-shadow: 1px 1px 2px #333;
-  }
-  p a {
-    color: $anderson-white;
+  h1 span img {
+    margin: 0 0 20px 0;
+    background-color: $anderson-white;
+    &::after {
+      filter: (blur(5px));
+      z-index: 0;
+    }
   }
 }
 
