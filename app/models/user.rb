@@ -4,9 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_create :send_created_notification
-
-  def self.send_created_notification
-    UserNotifier.send_signup_email(self).deliver
+  after_create do |user|
+    UserNotifier.send_signup_email(user).deliver
   end
+
 end
