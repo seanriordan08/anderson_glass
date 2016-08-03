@@ -62,11 +62,9 @@ body .jumbotron {
   z-index: 1;
   h1 span img {
     margin: 0 0 20px 0;
-    background-color: $anderson-white;
-    &::after {
-      filter: (blur(5px));
-      z-index: 0;
-    }
+    padding: 20px;
+    background: linear-gradient(140deg, rgba(255,255,255,0), rgba(255,255,255,.8), rgba(255,255,255,.2));
+    border-radius: 3px;
   }
 }
 
