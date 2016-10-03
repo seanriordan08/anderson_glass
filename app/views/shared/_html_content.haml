@@ -20,23 +20,23 @@
   var editor = new wysihtml5.Editor("wysihtml-textarea", { // id of textarea element
     toolbar:      "wysihtml-toolbar", // id of toolbar element
     parserRules:  wysihtml5ParserRules, // defined in parser rules set
-    stylesheets: ["<%= j( asset_path("application.css") ) %>"]
+    stylesheets: ["#{asset_path("application.css")}"]
   });
 
   $('#html_content_save').on('click', function(){
     var html_content = $('#wysihtml-textarea').html();
-    var section_name = "<%= j(action_name) %>";
+    var section_name = "#{action_name}";
 
     $.ajax({
-      url: "<%= j(save_html_content_path) %>",
+      url: "#{save_html_content_path}",
       method: 'PUT',
       data: { section_name: section_name, html_content: html_content },
       dataType: 'script',
-      success: function(){
-        Materialize.toast('Saved!', 2000);
-      },
       error: function(){
-        Materialize.toast('Unable to Save :(', 4000);
+        alert('error');
+      },
+      success: function(){
+        alert('success');
       }
     })
   })
