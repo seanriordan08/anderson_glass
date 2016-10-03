@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'landing_page#index'
+  get 'save_html_content', to: 'landing_page#save_html_content'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

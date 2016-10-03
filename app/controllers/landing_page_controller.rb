@@ -6,4 +6,11 @@ class LandingPageController < ApplicationController
 
     @craftsmanship_contents = SectionContent.where(name: 'craftsmanship').first
   end
+
+  def save_html_content
+    section_content = SectionContent.where(name: params[:section_name]).first
+    section_content.save_html_content(current_user, params[:html_content])
+
+    render status: 200
+  end
 end
