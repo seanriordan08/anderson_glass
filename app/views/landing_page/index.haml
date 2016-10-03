@@ -69,13 +69,7 @@
   %br\
   .col-sm-12.col-md-6
     .section_content
-      A growing number of architects, contractors and owners continue to rely on Anderson Glass’
-      commercial glazing for the best in lead times, full compliance with architectural specifications,
-      and quality products and installations that you will be proud of.
-      %br/
-      %br/
-      At Anderson Glass, we are committed to integrity, quality and professionalism on every project,
-      whether it be in your home or business location.  Call us today at 908-735-8333.
+      = render partial: "shared/html_content", locals: { content: @craftsmanship_contents }
   .col-sm-12.col-md-6{style:'height: 400px;'}
     .faded_container
       = image_tag("#{image_path('quality.jpg')}", size:'', class:'faded')

@@ -15,6 +15,10 @@ gem 'haml-rails', '~> 0.9'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'cancancan', '1.13.1'
+gem 'paperclip'
+gem 'image-picker-rails'
+gem 'bootstrap-growl-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'execjs'
