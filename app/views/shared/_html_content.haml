@@ -36,10 +36,18 @@
       data: { section_name: section_name, html_content: html_content },
       dataType: 'script',
       error: function(){
-        alert('error');
+        $.notify({
+          message: 'Error Saving, Please Refresh'
+        },{
+          type: 'danger'
+        });
       },
       success: function(){
-        alert('success');
+        $.notify({
+          message: 'Save Successful'
+        },{
+          type: 'success'
+        });
       }
     })
   })

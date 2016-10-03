@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-notify
+//= require wysihtml/lib/wysihtml-toolbar.js
+//= require wysihtml/parser_rules/advanced_and_extended.js
 //= require_tree .
