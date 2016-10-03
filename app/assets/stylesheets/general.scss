@@ -24,3 +24,31 @@ html body{
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+.modal.modal-wide .modal-dialog {
+  min-width: 250px;
+  width: 60%;
+}
+
+.image_picker_selector li {
+  margin: 0 2px 2px 0 !important;
+}
+.thumbnail {
+  margin: 0 !important;
+  padding: 3px !important;
+}
+.thumbnail > img {
+  height: 128px !important;
+}
+
+.whisper {
+  font-size: .8em;
+  font-style: italic;
+  color: #AAAAAA;
+}
+
+/* fluid 5 columns */
+.grid-sizer,
+.masonry-brick { width: 20%; }
+/* 2 columns */
+.masonry-brick--width2 { width: 40%; }
