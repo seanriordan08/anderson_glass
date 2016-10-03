@@ -8,9 +8,12 @@ class LandingPageController < ApplicationController
   end
 
   def save_html_content
+    params[:section_name].downcase!
     section_content = SectionContent.where(name: params[:section_name]).first
     section_content.save_html_content(current_user, params[:html_content])
 
-    render status: 200
+    respond_to do |format|
+      format.js { render "save_html_content" }
+    end
   end
 end

@@ -47,6 +47,20 @@ html body{
   color: #AAAAAA;
 }
 
+.lefted {
+  float: left;
+}
+
+.righted {
+  float: right;
+}
+
+.save-wrapper {
+  margin: 20px 0 0 0;
+  overflow: auto;
+  cursor: pointer;
+}
+
 /* fluid 5 columns */
 .grid-sizer,
 .masonry-brick { width: 20%; }

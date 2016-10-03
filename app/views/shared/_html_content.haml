@@ -4,13 +4,14 @@
     = render partial: "shared/wysihtml_toolbar"
   #wysihtml-textarea{:style => "outline:none"}
     = raw(content.html_content)
-  #html_content_save{:style => "display: inline-block; width: 100px; height: 36px;"}
-    %a.waves-effect.waves-light.btn.lefted Save
-  %div{:style => "position: relative; display: inline-block; top: -5px; left: 20px; float: right; margin: 0 35px 0 0"}
-    .whisper Last Modified:
-    .whisper{:style => "clear: both"}
-      = content_modified_stamp(content)
-      | #{content_time_stamp(content)}
+  .save-wrapper
+    %div{:style => "position: relative; display: inline-block; top: -5px; float: left"}
+      .whisper Last Modified:
+      .whisper{:style => "clear: both"}
+        = content_modified_stamp(content)
+        | #{content_time_stamp(content)}
+    #html_content_save
+      %a.btn-lg.btn-primary.righted Save
 - else
   %div{:style => "outline:none"}
     = raw(content.html_content)
@@ -25,10 +26,12 @@
 
   $('#html_content_save').on('click', function(){
     var html_content = $('#wysihtml-textarea').html();
-    var section_name = "#{action_name}";
+
+    var parent_section = $(this).closest('.section_wrapper');
+    var section_name = parent_section.find('.section_header').text();
 
     $.ajax({
-      url: "#{save_html_content_path}",
+      url: "#{landing_page_save_html_content_path}",
       method: 'PUT',
       data: { section_name: section_name, html_content: html_content },
       dataType: 'script',
