@@ -137,30 +137,37 @@ body .main_slider {
 }
 
 .thumbnail {
+  position: relative;
+  height: 550px;
   text-align: center;
   background-color: $anderson-lightblue;
   border: 1px solid #333;
-  .circle_hover {
-    display: inline-block;
-    width: 140px;
-    height: 140px;
-    margin-top: 10px;
-    text-align: center;
-    border: 1px solid #333;
-    border-radius: 100px;
-    transition: .1s;
-    cursor: pointer;
-    &:hover {
-      transition: .2s;
-      background: #777;
-    }
+  .square_hover {
+    overflow: auto;
+    margin: 10px 0 0 0;
+    border-radius: 3px;
+
     img {
-      position: relative;
-      top: 5px;
-      display: inline-block;
-      padding: 15px;
+      outline: 10px solid rgba(255,255,255, .3);
+      outline-offset: -10px;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+
+    img + img {
+      border: 10px solid rgba(255,255,255,.5);
     }
   }
+
+  .thumb_button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+.caption h3 {
+  margin: 10px 0 0 0;
 }
 .caption .table_wrapper:first-child {
   color: transparent;
