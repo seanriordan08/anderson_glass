@@ -30,7 +30,7 @@
       .caption
         %h3 Residential
         .table_wrapper{style:'overflow: auto'}
-          %table{style:'width:70%; float:left; margin: 20px 0; text-align: right'}
+          %table.market_table
             - @residential_services.each do |service|
               %tr{class:"#{cycle('','light-gray')}"}
                 %td{style:'float: left'}= service
@@ -48,7 +48,7 @@
       .caption
         %h3 Commercial
         .table_wrapper{style:'overflow: auto'}
-          %table{style:'width:70%; float:left; margin: 20px 0; text-align: right'}
+          %table.market_table
             - @commercial_services.each do |service|
               %tr{class:"#{cycle('','light-gray')}"}
                 %td{style:'float: left'}= service
