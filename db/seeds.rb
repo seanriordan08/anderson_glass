@@ -21,6 +21,13 @@ first_names.each_with_index do |first_name, index|
   ).find_or_create_by!(email: "#{first_name}@example.com")
 end
 
+SectionContent.create_with(
+  name: 'craftsmanship',
+  html_content: "A growing number of architects, contractors and owners continue to rely on Anderson Glass' commercial glazing for the best in lead times, full compliance with architectural specifications, and quality products and installations that you will be proud of. At Anderson Glass, we are committed to Quality,&nbsp;Integrity, and Professionalism on every project, whether it be in your home or business location. Call us today at 908.735.8333.",
+  last_modified_by: nil,
+  last_modified_date: nil
+)
+
 # Add services
 residential_services = ['Frameless shower enclosures','Custom shower doors','Tub enclosures','Beveling','Tempered glass','Insulated glass','Table tops','Mirrors', 'Laminated glass']
 commercial_services = ['Storefronts', 'Curtain walls', 'Automatic doors', 'Glass Entrances and doors', 'Custom glass walls', 'Total glass doors', 'Glass railings', 'Tempered glass', 'Aluminum panels']
