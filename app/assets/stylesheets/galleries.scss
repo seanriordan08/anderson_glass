@@ -3,9 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .gallery_image {
+  position: relative;
+  display: inline-block;
   margin: 5px;
+  cursor: pointer;
+}
 
-  &:hover {
-
-  }
+.gallery_overlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  height: 0;
+  text-align: center;
+  font-size: 3em;
+  color: whitesmoke;
+  text-shadow: 0 0 7px rgb(5,5,5);
 }
