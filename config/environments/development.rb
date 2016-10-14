@@ -1,3 +1,7 @@
+PAPERCLIP_STORAGE_OPTS = {
+  styles: { :banner => "1497x589>", medium: "300x300>", :thumb => "192x192>" }
+}
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

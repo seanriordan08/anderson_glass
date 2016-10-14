@@ -1,16 +1,17 @@
+PAPERCLIP_STORAGE_OPTS = {
+  path: Rails.root.join('app', 'assets', 'images', 'custom', ':style', ':filename' ).to_s,
+  styles: { :banner => "1497x589>", medium: "300x300>", :thumb => "192x192>" },
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV['S3_BUCKET_NAME'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    s3_region: ENV['AWS_REGION']
+  }
+}
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
-  # AWS paperclip configs
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      bucket: ENV['S3_BUCKET_NAME'],
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      s3_region: ENV['AWS_REGION']
-    }
-  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

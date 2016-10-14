@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   root 'landing_page#index'
   put 'landing_page/save_html_content', to: 'landing_page#save_html_content'
 
+  get 'pictures/index', to: 'pictures#index'
+  post 'pictures/create', to: 'pictures#create'
+
+  get 'galleries/index', to: 'galleries#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

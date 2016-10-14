@@ -1,0 +1,21 @@
+gallery
+
+%br
+%br
+
+- if @pictures.present?
+  - @pictures.each do |p|
+    = image_tag p.image.url(:thumb), class: 'gallery_image'
+      #overlay
+        %span#delete
+
+= form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :image
+    = f.file_field :image
+  .actions
+    = f.submit 'Upload Picture'
+    = link_to 'Nevermind', root_path, class: 'button'
