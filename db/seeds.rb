@@ -8,8 +8,8 @@
 
 
 # Add users
-first_names = %w(jim bob tom sally)
-last_names = %w(smith johnson reynolds shears)
+first_names = %w(example jim bob tom sally)
+last_names = %w(example_last_name smith johnson reynolds shears)
 raise "First names must all have last names!" unless (first_names.size == last_names.size)
 
 first_names.each_with_index do |first_name, index|
@@ -21,7 +21,7 @@ first_names.each_with_index do |first_name, index|
   ).find_or_create_by!(email: "#{first_name}@example.com")
 end
 
-SectionContent.create_with(
+SectionContent.create(
   name: 'craftsmanship',
   html_content: "A growing number of architects, contractors and owners continue to rely on Anderson Glass' commercial glazing for the best in lead times, full compliance with architectural specifications, and quality products and installations that you will be proud of. At Anderson Glass, we are committed to Quality,&nbsp;Integrity, and Professionalism on every project, whether it be in your home or business location. Call us today at 908.735.8333.",
   last_modified_by: nil,

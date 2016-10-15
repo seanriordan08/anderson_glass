@@ -7,13 +7,14 @@
       .gallery_overlay
         .glyphicon.glyphicon-trash
 
-= form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|
-  -#.field
-  -#  = f.label :name
-  -#  = f.text_field :name
-  .field
-    = f.label :image
-    = f.file_field :image
-  .actions
-    = f.submit 'Upload Picture'
-    = link_to 'Nevermind', root_path, class: 'button'
+- if can? :manage, :all
+  = form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|
+    -#.field
+    -#  = f.label :name
+    -#  = f.text_field :name
+    .field
+      = f.label :image
+      = f.file_field :image
+    .actions
+      = f.submit 'Upload Picture'
+      = link_to 'Nevermind', root_path, class: 'button'

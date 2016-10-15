@@ -3,7 +3,7 @@
   #wysihtml-toolbar{:style => "display: none;"}
     = render partial: "shared/wysihtml_toolbar"
   #wysihtml-textarea{:style => "outline:none"}
-    = raw(content.html_content)
+    = raw(content.html_content) unless content.nil?
   .save-wrapper
     %div{:style => "position: relative; display: inline-block; top: 0; float: left;"}
       .whisper Last Modified:
@@ -14,7 +14,7 @@
       %a.btn-lg.btn-primary.righted Save
 - else
   %div{:style => "outline:none"}
-    = raw(content.html_content)
+    = raw(content.html_content) unless content.nil?
 
 
 :javascript
