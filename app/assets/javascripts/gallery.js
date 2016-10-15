@@ -1,8 +1,10 @@
 
 $(document).on('ready', function(){
+  var gallery_picture = $('.gallery_picture');
   var gallery_image = $('.gallery_image');
+  var gallery_overlay = $('.gallery_overlay');
 
-  gallery_image.hover(function(){
+  gallery_picture.hover(function(){
     var overlay = $(this).find('.gallery_overlay').first();
     overlay.fadeIn(200);
     $(this).animate({opacity: .8}, 200);
@@ -13,10 +15,19 @@ $(document).on('ready', function(){
   });
 
   gallery_image.click(function(){
-    if ($(this).data('id') == undefined)
+    remove_picture($(this));
+  });
+
+  gallery_overlay.click(function(){
+    var this_el = $(this).siblings('.gallery_image');
+    remove_picture(this_el);
+  });
+
+  function remove_picture(this_el){
+    if (this_el.data('id') == undefined)
       return;
 
-    var the_id = $(this).data('id');
+    var the_id = this_el.data('id');
     $.ajax({
       method: 'POST',
       url: '/galleries/destroy',
@@ -29,6 +40,6 @@ $(document).on('ready', function(){
         console.log('errors!');
       }
     })
-  });
+  }
 });
 

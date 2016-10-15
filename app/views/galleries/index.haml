@@ -2,7 +2,7 @@
 
 - if @pictures.present?
   - @pictures.each do |p|
-    .gallery_image
+    .gallery_picture
       = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
       .gallery_overlay
         .glyphicon.glyphicon-trash
