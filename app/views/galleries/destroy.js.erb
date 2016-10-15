@@ -1,6 +1,9 @@
 
-var removable_element = $(".gallery_image[data-id='<%=j(destroyed_id)%>']");
-var removable_overlay = removable_element.siblings('.gallery_overlay');
+var removable_image = $(".gallery_image[data-id='<%=j(destroyed_id)%>']");
+var removable_picture = removable_image.closest('.gallery_picture');
+var removable_overlay = removable_image.siblings('.gallery_overlay');
 
 removable_overlay.fadeOut(200);
-removable_element.fadeOut(200);
+removable_image.fadeOut(200, function(){
+  removable_picture.remove();
+});
