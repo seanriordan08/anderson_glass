@@ -4,8 +4,9 @@
   - @pictures.each do |p|
     .gallery_picture
       = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
-      .gallery_overlay
-        .glyphicon.glyphicon-trash
+      -if can? :manage, :all
+        .gallery_overlay
+          .glyphicon.glyphicon-trash
 
 - if can? :manage, :all
   = form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|
