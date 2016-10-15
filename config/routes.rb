@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'pictures/create', to: 'pictures#create'
 
   get 'galleries/index', to: 'galleries#index'
+  post 'galleries/destroy', to: 'galleries#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

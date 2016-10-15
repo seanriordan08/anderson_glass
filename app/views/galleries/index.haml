@@ -1,12 +1,9 @@
-gallery
-
-%br
-%br
+%h1 gallery
 
 - if @pictures.present?
   - @pictures.each do |p|
     .gallery_image
-      = image_tag p.image.url(:thumb), class: 'gallery_image'
+      = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
       .gallery_overlay
         .glyphicon.glyphicon-trash
 
