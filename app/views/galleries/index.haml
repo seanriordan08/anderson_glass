@@ -16,12 +16,8 @@
         .sk-cube3.sk-cube
 
 - if can? :manage, :all
-  = form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|
-    -#.field
-    -#  = f.label :name
-    -#  = f.text_field :name
+  = form_for Picture.new, url: pictures_create_path, html: { class: 'gallery_upload', multipart: true } do |f|
     .field
-      = f.label :image
       = f.file_field :image
     .actions
       = f.submit 'Upload Picture'
