@@ -37,8 +37,14 @@ div {
   }
 }
 
-#notice {
+.notice {
+  display: none;
   color: green;
+}
+
+.alert {
+  display: none;
+  color: gold;
 }
 
 .field_with_errors {

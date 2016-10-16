@@ -1,18 +1,19 @@
-%h1 gallery
+.gallery_header Gallery
 
 - if @pictures.present?
-  - @pictures.each do |p|
-    .gallery_picture
-      = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
-      -if can? :manage, :all
-        .gallery_overlay
-          .glyphicon.glyphicon-trash
-.gallery_picture_spinner
-  .sk-folding-cube
-    .sk-cube1.sk-cube
-    .sk-cube2.sk-cube
-    .sk-cube4.sk-cube
-    .sk-cube3.sk-cube
+  .gallery_section
+    - @pictures.each do |p|
+      .gallery_picture
+        = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
+        -if can? :manage, :all
+          .gallery_overlay
+            .glyphicon.glyphicon-trash
+    .gallery_picture_spinner
+      .sk-folding-cube
+        .sk-cube1.sk-cube
+        .sk-cube2.sk-cube
+        .sk-cube4.sk-cube
+        .sk-cube3.sk-cube
 
 - if can? :manage, :all
   = form_for Picture.new, url: pictures_create_path, html: { multipart: true } do |f|

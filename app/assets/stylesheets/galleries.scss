@@ -2,12 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.gallery_header {
+  text-align: center;
+  font-size: 6em;
+  margin: 0 0 20px 0;
+}
+
+.gallery_section {
+  margin: 0 20%;
+}
+
 .gallery_picture {
   position: relative;
   display: inline-block;
   margin: 5px;
-  cursor: pointer;
   opacity: 1;
+  border: 7px solid rgb(245, 245, 245);
+  border-radius: 5px;
+  box-shadow: 0 0 1px 0 rgb(85, 85, 85);
+  cursor: pointer;
 }
 
 .gallery_overlay {
