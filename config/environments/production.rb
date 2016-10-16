@@ -1,7 +1,7 @@
 PAPERCLIP_STORAGE_OPTS = {
   path: Rails.root.join('pictures', ':style', ':filename' ).to_s,
   styles: { :thumb => "192x192>" }, # :banner => "1497x589>", medium: "300x300>",
-  :convert_options => { :thumb => '-quality 80' },
+  :convert_options => { :original => '-quality 10', :thumb => '-quality 80' },
   storage: :s3,
   s3_host_name: 's3-us-west-2.amazonaws.com',
   s3_credentials: {
