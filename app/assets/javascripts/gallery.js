@@ -23,6 +23,10 @@ $(document).on('ready', function(){
     remove_picture(this_el);
   });
 
+  $('#new_picture').submit(function(){
+    $('.gallery_picture_spinner').css({display: 'inline-block'});
+  });
+
   function remove_picture(this_el){
     if (this_el.data('id') == undefined)
       return;
@@ -35,6 +39,7 @@ $(document).on('ready', function(){
       dataType: 'script',
       success: function(){
         console.log('great success');
+        $('.gallery_picture_spinner').css({display: 'none'});
       },
       error: function() {
         console.log('errors!');
