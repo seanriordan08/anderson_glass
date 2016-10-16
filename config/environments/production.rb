@@ -1,5 +1,5 @@
 PAPERCLIP_STORAGE_OPTS = {
-  path: Rails.root.join('app', 'assets', 'images', 'custom', ':style', ':filename' ).to_s,
+  path: Rails.root.join('pictures', ':style', ':filename' ).to_s,
   styles: { :banner => "1497x589>", medium: "300x300>", :thumb => "192x192>" },
   storage: :s3,
   s3_credentials: {
