@@ -7,8 +7,15 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.create( picture_params )
-    redirect_to action: 'index'
+    @picture = Picture.new( picture_params )
+
+    if @picture.save
+      flash[:success] = 'Image Added'
+      redirect_to action: 'index'
+    else
+      flash[:error] = @picture.errors.messages.values.flatten.first
+      redirect_to action: 'index'
+    end
   end
 
 

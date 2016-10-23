@@ -22,3 +22,23 @@
     .actions
       = f.submit 'Upload Picture'
       = link_to 'Nevermind', root_path, class: 'button'
+
+:javascript
+  var confirmation_success = "#{ j(flash[:success]) }";
+  var confirmation_error = "#{ j(flash[:error]) }";
+
+  if (confirmation_success != '') {
+    $.notify({
+      message: "#{ j(flash[:success]) }"
+    },{
+      type: 'success'
+    });
+  }
+  if (confirmation_error != '') {
+    $.notify({
+      message: "#{ j(flash[:error]) }"
+    },{
+      type: 'danger'
+    });
+  }
+
