@@ -20,6 +20,7 @@ time, mark, audio, video {
 
 html body{
   width: 100%;
+  padding-top: 61px;
   background: image-url('shattered_blue.png') repeat;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -60,6 +61,10 @@ html body{
   margin: 15px 0 0 0;
   overflow: auto;
   cursor: pointer;
+}
+
+.navbar-brand img {
+  width: 40px;
 }
 
 /* fluid 5 columns */

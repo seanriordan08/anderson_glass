@@ -48,3 +48,13 @@ $(document).on('ready', function(){
   }
 });
 
+// Track active navbar links
+$(function(){
+  console.log('hit');
+  var url = window.location;
+  $('ul.nav a[href="'+ url.pathname +'"]').parent().addClass('active');
+  $('ul.nav a').filter(function() {
+    return this.href == url;
+  }).parent().addClass('active');
+});
+

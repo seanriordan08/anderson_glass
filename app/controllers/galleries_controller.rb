@@ -6,7 +6,6 @@ class GalleriesController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     @picture = Picture.where(id: params[:id]).first
 
     @picture.image.destroy
