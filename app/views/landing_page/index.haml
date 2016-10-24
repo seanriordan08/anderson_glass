@@ -60,7 +60,7 @@
         %p.thumb_button
           %a.btn.btn-primary{:href => "#{galleries_index_path}", :role => "button"} View Commercial Work
 
-.row.section_wrapper.orange
+.row.section_wrapper.orange.wysihtml_editable
   %h1.section_header Craftsmanship
   .container
     %hr
@@ -73,7 +73,7 @@
       = image_tag("#{image_path('quality.jpg')}", size:'', class:'faded')
       .after
 
-.row.section_wrapper.black
+.row.section_wrapper.black.wysihtml_editable
   %h1.section_header Locations
   .container
     %hr
@@ -84,3 +84,22 @@
   .col-sm-12.col-md-6
     .section_content
       = render partial: "shared/html_content", locals: { content: @locations_contents }
+
+:javascript
+  $(document).ready(function() {
+
+    $('.wysihtml_editable').each(function() {
+      var parent_section = $(this).closest('.section_wrapper');
+      var section_name = parent_section.find('.section_header').text().toLowerCase();
+      console.log(section_name);
+      var textarea_id = "wysihtml-textarea-" + section_name;
+      var toolbar_id = "wysihtml-toolbar-" + section_name;
+
+      var editor = new wysihtml5.Editor(textarea_id, { // id of textarea element
+        toolbar:      toolbar_id, // id of toolbar element
+        parserRules:  wysihtml5ParserRules, // defined in parser rules set
+        stylesheets: ["#{asset_path('application.css')}"]
+      });
+    });
+
+  });

@@ -1,8 +1,8 @@
 
 - if can? :save_html_content, SectionContent
-  %div{id: "#wysihtml-toolbar-#{content.name}", :style => "display: block;"}
+  %div{id: "wysihtml-toolbar-#{content.name}", :style => "display: block;"}
     = render partial: "shared/wysihtml_toolbar"
-  %div{id: "#wysihtml-textarea-#{content.name}", :style => "outline:none"}
+  %div{id: "wysihtml-textarea-#{content.name}", :style => "outline:none"}
     = raw(content.html_content) unless content.nil?
   .save-wrapper
     %div{:style => "position: relative; display: inline-block; top: 0; float: left;"}
@@ -18,26 +18,15 @@
 
 
 :javascript
-  $('.section_wrapper').each(function() {
-    // iterate through each section, initializing an editor on each one
-  })
-
-  var parent_section = $(this).closest('.section_wrapper');
-  var section_name = parent_section.find('.section_header').text();
-  var textarea_id = "wysihtml-textarea-" + section_name;
-  var toolbar_id = "wysihtml-toolbar-" + section_name;
-
-  var editor = new wysihtml5.Editor(textarea_id, { // id of textarea element
-    toolbar:      toolbar_id, // id of toolbar element
-    parserRules:  wysihtml5ParserRules, // defined in parser rules set
-    stylesheets: ["#{asset_path('application.css')}"]
-  });
 
   $('#html_content_save').on('click', function(){
-    var html_content = $(textarea_id).html();
 
     var parent_section = $(this).closest('.section_wrapper');
-    var section_name = parent_section.find('.section_header').text();
+    var section_name = parent_section.find('.section_header').text().toLowerCase();
+
+    var textarea_id = "wysihtml-textarea-" + section_name;
+    var toolbar_id = "wysihtml-toolbar-" + section_name;
+    var html_content = $(textarea_id).html();
 
     $.ajax({
       url: "#{landing_page_save_html_content_path}",
