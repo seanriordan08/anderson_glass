@@ -10,7 +10,7 @@
       .whisper{:style => "clear: both"}
         = content_modified_stamp(content)
         | #{content_time_stamp(content)}
-    #html_content_save{style: 'margin: 5px 0 0 0'}
+    %div{id: "html_content_save-#{content.name}", :style => 'margin: 5px 0 0 0'}
       %a.btn-lg.btn-primary.righted Save
 - else
   %div{:style => "outline:none"}
@@ -19,14 +19,14 @@
 
 :javascript
 
-  $('#html_content_save').on('click', function(){
+  $("#html_content_save-#{content.name}").on('click', function(){
 
     var parent_section = $(this).closest('.section_wrapper');
     var section_name = parent_section.find('.section_header').text().toLowerCase();
 
     var textarea_id = "wysihtml-textarea-" + section_name;
     var toolbar_id = "wysihtml-toolbar-" + section_name;
-    var html_content = $(textarea_id).html();
+    var html_content = $("#"+textarea_id).html();
 
     $.ajax({
       url: "#{landing_page_save_html_content_path}",
