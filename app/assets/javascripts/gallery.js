@@ -38,11 +38,9 @@ $(document).on('ready', function(){
       data: { id: the_id },
       dataType: 'script',
       success: function(){
-        console.log('great success');
         $('.gallery_picture_spinner').css({display: 'none'});
       },
       error: function() {
-        console.log('errors!');
       }
     })
   }
@@ -50,7 +48,6 @@ $(document).on('ready', function(){
 
 // Track active navbar links
 $(function(){
-  console.log('hit');
   var url = window.location;
   $('ul.nav a[href="'+ url.pathname +'"]').parent().addClass('active');
   $('ul.nav a').filter(function() {

@@ -83,10 +83,4 @@
     %script{:async => '', :defer => '', src:'https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4MvYs0ac42irOI1cOFgQCGixjyHro0Q&callback=initMap'}
   .col-sm-12.col-md-6
     .section_content
-      Anderson Glass services clients in towns across New Jersey such as Annandale, Bedminster,
-      Berkeley Heights, Bernardsville, Chatham, Clinton, Far Hills, Flemington, Maplewood, Millburn,
-      New Providence, Pittstown, Short Hills, Summit, Tewksbury, Westfield and surrounding towns.
-      %br/
-      %br/
-      Anderson Glass manufactures and fabricates in Hunterdon County, NJ and services Essex, Hunterdon,
-      Morris, Union and Somerset county and surrounding townships.
+      = render partial: "shared/html_content", locals: { content: @locations_contents }

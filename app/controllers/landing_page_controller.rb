@@ -5,6 +5,7 @@ class LandingPageController < ApplicationController
     @commercial_services = Service.get_service_descriptions('commercial')
 
     @craftsmanship_contents = SectionContent.where(name: 'craftsmanship').first
+    @locations_contents = SectionContent.where(name: 'locations').first
   end
 
   def save_html_content
