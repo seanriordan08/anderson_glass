@@ -1,4 +1,16 @@
-.gallery_header Gallery
+.gallery_wrapper
+  .gallery_center
+    .gallery_header Gallery
+
+  .gallery_center
+    .market_title Residential
+    .market_toggle
+      %ul.tg-list
+        %li.tg-list-item
+          %input#cb2.tgl.tgl-ios(type = "checkbox")
+          %label.tgl-btn(for = "cb2")
+    .market_title Commercial
+
 
 - if @pictures.present?
   .gallery_section
