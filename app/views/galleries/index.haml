@@ -19,6 +19,11 @@
   = form_for Picture.new, url: pictures_create_path, html: { class: 'gallery_upload', multipart: true } do |f|
     .field
       = f.file_field :image
+    .field
+      = f.radio_button(:market, "residential")
+      = f.label(:residential, "Residential")
+      = f.radio_button(:market, "commercial")
+      = f.label(:commercial, "Commercial")
     .actions
       = f.submit 'Upload Picture'
       = link_to 'Nevermind', root_path, class: 'button'

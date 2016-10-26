@@ -16,12 +16,13 @@ class PicturesController < ApplicationController
       flash[:error] = @picture.errors.messages.values.flatten.first
       redirect_to action: 'index'
     end
+
   end
 
 
   private
 
   def picture_params
-    params.require(:picture).permit(:image, :name)
+    params.require(:picture).permit(:image, :market)
   end
 end
