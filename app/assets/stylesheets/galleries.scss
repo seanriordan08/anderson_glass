@@ -36,7 +36,7 @@
 
 .gallery_picture.residential {
   position: relative;
-  border: 1px solid rgb(252, 125, 0);
+  border: 1px solid rgba(252, 125, 0, .6);
   &:before {
     content: " ";
     position: absolute;
@@ -53,7 +53,7 @@
 
 .gallery_picture.commercial {
   position: relative;
-  border: 1px solid rgba(0, 66, 92, 1);
+  border: 1px solid rgba(0, 66, 92, .6);
   &:before {
     content: " ";
     position: absolute;
