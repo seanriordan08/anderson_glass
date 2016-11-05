@@ -4,7 +4,7 @@ class LandingPageController < ApplicationController
     @residential_services = Service.get_service_descriptions('residential')
     @commercial_services = Service.get_service_descriptions('commercial')
 
-    @craftsmanship_contents = SectionContent.where(name: 'craftsmanship').first
+    @projects_contents = SectionContent.where(name: 'projects').first
     @locations_contents = SectionContent.where(name: 'locations').first
   end
 
