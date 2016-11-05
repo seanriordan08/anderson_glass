@@ -91,15 +91,19 @@
     $('.wysihtml_editable').each(function() {
       var parent_section = $(this).closest('.section_wrapper');
       var section_name = parent_section.find('.section_header').text().toLowerCase();
-      console.log(section_name);
+
       var textarea_id = "wysihtml-textarea-" + section_name;
       var toolbar_id = "wysihtml-toolbar-" + section_name;
 
-      var editor = new wysihtml5.Editor(textarea_id, { // id of textarea element
-        toolbar:      toolbar_id, // id of toolbar element
-        parserRules:  wysihtml5ParserRules, // defined in parser rules set
-        stylesheets: ["#{asset_path('application.css')}"]
-      });
+      var admin_logged_in = "#{@current_user.first_name if @current_user.present?}";
+
+      if ((typeof admin_logged_in !== 'undefined') && (admin_logged_in)) {
+        var editor = new wysihtml5.Editor(textarea_id, { // id of textarea element
+          toolbar:      toolbar_id, // id of toolbar element
+          parserRules:  wysihtml5ParserRules, // defined in parser rules set
+          stylesheets: ["#{asset_path('application.css')}"]
+        });
+      }
 
     });
 

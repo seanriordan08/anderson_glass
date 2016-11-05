@@ -6,6 +6,8 @@ class LandingPageController < ApplicationController
 
     @projects_contents = SectionContent.where(name: 'projects').first
     @locations_contents = SectionContent.where(name: 'locations').first
+
+    @current_user = current_user
   end
 
   def save_html_content
