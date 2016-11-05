@@ -21,5 +21,7 @@ $(document).on('ready', function(){
     pauseOnHover: true
   });
 
+  $('.multi_switch').multiSwitch();
+
 });
 

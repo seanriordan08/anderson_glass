@@ -40,7 +40,7 @@
 /* Styles */
 
 .multi_switch {
-    width: 50px;
+    width: 70px;
 
     @include no-select();
 
@@ -50,7 +50,7 @@
 
     .switch-content {
         background: none;
-        background-color: #D97C6F;
+        background-color: #70c774;
 
         height: 31px;
 
@@ -99,7 +99,7 @@
         }
 
         &.active {
-            background-color: #5DC177;
+            background-color: #5a8dc1;
 
             .switch-circle {
                 left: 100%;
@@ -115,7 +115,7 @@
         }
 
         &.initial{
-            background-color: #dddddd;
+            background-color: #888;
 
             .switch-circle {
                 left: 50%;
