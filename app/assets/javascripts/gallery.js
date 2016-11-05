@@ -46,6 +46,17 @@ $(document).on('ready', function(){
   }
 });
 
+$(document).on('change', $('.multi_switch_hook'), function(e, state){
+  if (state == 'active') {
+    $.ajax({
+      method: 'GET',
+      url: path,
+      data: {the_data: data},
+      dataType: 'script'
+    });
+  }
+});
+
 // Track active navbar links
 $(function(){
   var url = window.location;

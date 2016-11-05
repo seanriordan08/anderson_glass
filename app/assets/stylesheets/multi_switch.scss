@@ -44,8 +44,7 @@
   @include no-select();
 
   * {
-      @include transition();
-    //transition: left .2s cubic-bezier( 0.175, 0.085, 0.320, 1.275), padding .1s ease, margin .1s ease;
+    @include transition();
   }
 
   .switch-content {
@@ -54,6 +53,7 @@
     height: 50px;
     position: relative;
     cursor: pointer;
+    transition: 300ms;
 
     @include radius(31px);
 
