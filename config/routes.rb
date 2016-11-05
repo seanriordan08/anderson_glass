@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post 'pictures/create', to: 'pictures#create'
 
   get 'galleries/index', to: 'galleries#index'
+  get 'galleries/show_residential', to: 'galleries#show_residential'
+  get 'galleries/show_commercial', to: 'galleries#show_commercial'
   post 'galleries/destroy', to: 'galleries#destroy'
 
   # Example of regular route:

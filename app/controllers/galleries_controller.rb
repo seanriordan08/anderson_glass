@@ -1,8 +1,16 @@
 class GalleriesController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :only => [:create]
 
   def index
     @pictures = Picture.all
+  end
+
+  def show_residential
+    @pictures = Picture.where(market: 'residential')
+  end
+
+  def show_commercial
+    @pictures = Picture.where(market: 'commercial')
   end
 
   def destroy

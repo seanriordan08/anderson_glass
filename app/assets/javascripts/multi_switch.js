@@ -128,7 +128,7 @@
                 $(this).find('.switch-content.disable').removeClass('disable');
                 $(this).find('.switch-content').addClass('initial');
                 $(checkbox).attr('value', 0);
-                $( ".multi_switch_hook" ).trigger('change', 'disable');
+                $( ".multi_switch_hook" ).trigger('change', 'initial');
               }
             });
 

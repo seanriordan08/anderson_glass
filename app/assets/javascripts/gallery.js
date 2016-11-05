@@ -47,11 +47,28 @@ $(document).on('ready', function(){
 });
 
 $(document).on('change', $('.multi_switch_hook'), function(e, state){
+  console.log(state);
+  if (state == 'disable') {
+    $.ajax({
+      method: 'GET',
+      url: '/galleries/show_residential',
+      data: {the_data: 'the data'},
+      dataType: 'script'
+    });
+  }
   if (state == 'active') {
     $.ajax({
       method: 'GET',
-      url: path,
-      data: {the_data: data},
+      url: '/galleries/show_commercial',
+      data: {the_data: 'the data'},
+      dataType: 'script'
+    });
+  }
+  if (state == 'initial') {
+    $.ajax({
+      method: 'GET',
+      url: '/galleries/index',
+      data: {the_data: 'the data'},
       dataType: 'script'
     });
   }

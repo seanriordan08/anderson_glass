@@ -14,7 +14,7 @@
 - if @pictures.present?
   .gallery_section
     - @pictures.each do |p|
-      .gallery_picture
+      %div(class="gallery_picture #{p.market}")
         = image_tag p.image.url(:thumb), class: 'gallery_image', :'data-id' => p.id
         -if can? :manage, :all
           .gallery_overlay

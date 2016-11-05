@@ -31,10 +31,41 @@
   display: inline-block;
   margin: 5px;
   opacity: 1;
-  border: 7px solid rgb(245, 245, 245);
-  border-radius: 5px;
-  box-shadow: 0 0 1px 0 rgb(85, 85, 85);
   cursor: pointer;
+}
+
+.gallery_picture.residential {
+  position: relative;
+  border: 1px solid rgb(252, 125, 0);
+  &:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgb(85, 85, 85);
+  }
+}
+
+.gallery_picture.commercial {
+  position: relative;
+  border: 1px solid rgba(0, 66, 92, 1);
+  &:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 3px solid rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgb(85, 85, 85);
+  }
 }
 
 .gallery_overlay {
