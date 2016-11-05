@@ -82,14 +82,6 @@
                         
                         $(uelement).find('.info-slide').remove();
                     });
-
-                    //infoIndeferido.hover(function(){
-                    //    $(uelement).find('.switch-content').addClass('active');
-                    //    $(uelement).find('.switch-content').removeClass('initial');
-                    //}, function(){
-                    //    $(uelement).find('.switch-content').addClass('initial');
-                    //    $(uelement).find('.switch-content').removeClass('active');
-                    //});
                     
                     eventClick = false;
                 }
@@ -110,7 +102,6 @@
             }
 
             uelement.click(function () {
-                
                 if (!eventClick)
                     return;
 
@@ -119,64 +110,27 @@
                 if (checkbox.is(":disabled"))
                     return;
 
-                if ($(checkbox).attr('checked-value')) {
-                    var checked = $(this).find('.switch-content').hasClass('active');
-                    var status = !checked;
-                    if (checked) {
-                        checkbox.val($(checkbox).attr('unchecked-value'));
-                    } else {
-                        checkbox.val($(checkbox).attr('checked-value'));
-                    }
+                var initial = $(this).find('.switch-content').hasClass('initial');
+                var active = $(this).find('.switch-content').hasClass('active');
+                var disable = $(this).find('.switch-content').hasClass('disable');
+
+                if (initial) {
+                  $(this).find('.switch-content.initial').removeClass('initial');
+                  $(this).find('.switch-content').addClass('active');
+                  $(checkbox).attr('value', 1);
+                  console.log('now active');
+                } else if (active) {
+                  $(this).find('.switch-content.active').removeClass('active');
+                  $(this).find('.switch-content').addClass('disable');
+                  $(checkbox).attr('value', 2);
+                  console.log('now disable');
                 } else {
-                    var status = !checkbox.is(":checked");
-                    
-                    checkbox.prop('checked', status);
+                  $(this).find('.switch-content.disable').removeClass('disable');
+                  $(this).find('.switch-content').addClass('initial');
+                  $(checkbox).attr('value', 0);
+                  console.log('now initial');
                 }
 
-                settings.functionOnChange(checkbox);
-                $(this).find('.switch-content').removeClass('initial');
-                if (status) {
-                    $(this).find('span').html(settings.textChecked);
-                    $(this).find('.switch-content').addClass('active');
-                    $(this).find('.switch-content').removeClass('disable');
-                } else {
-                    $(this).find('span').html(settings.textNotChecked);
-                    $(this).find('.switch-content').addClass('disable');
-                    $(this).find('.switch-content').removeClass('active');
-                }
-
-            });
-            uelement.change(function () {
-
-                var checkbox = $(this).find('input');
-                if (checkbox.is(":disabled"))
-                    return;
-
-                if ($(checkbox).attr('checked-value')) {
-                    var checked = $(this).find('.switch-content').hasClass('active');
-                    var status = !checked;
-
-                    if (checked) {
-                        checkbox.val($(checkbox).attr('unchecked-value'));
-                    } else {
-                        checkbox.val($(checkbox).attr('checked-value'));
-                    }
-                } else {
-                    var status = !checkbox.is(":checked");
-                    checkbox.prop('checked', status);
-                }
-
-                settings.functionOnChange(checkbox);
-                $(this).find('.switch-content').removeClass('initial');
-                if (status) {
-                    $(this).find('span').html(settings.textChecked);
-                    $(this).find('.switch-content').addClass('active');
-                    $(this).find('.switch-content').removeClass('disable');
-                } else {
-                    $(this).find('span').html(settings.textNotChecked);
-                    $(this).find('.switch-content').addClass('disable');
-                    $(this).find('.switch-content').removeClass('active');
-                }
             });
 
             $(this).after(uelement);
