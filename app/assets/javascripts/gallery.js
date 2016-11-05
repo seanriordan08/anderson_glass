@@ -47,7 +47,6 @@ $(document).on('ready', function(){
 });
 
 $(document).on('change', $('.multi_switch_hook'), function(e, state){
-  console.log(state);
   if (state == 'disable') {
     $.ajax({
       method: 'GET',
