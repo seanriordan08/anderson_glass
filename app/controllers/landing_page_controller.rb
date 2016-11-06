@@ -1,13 +1,9 @@
 class LandingPageController < ApplicationController
 
   def index
-    @residential_services = Service.get_service_descriptions('residential')
-    @commercial_services = Service.get_service_descriptions('commercial')
-
-    @projects_contents = SectionContent.where(name: 'projects').first
-    @locations_contents = SectionContent.where(name: 'locations').first
-
+    set_section_content
     @current_user = current_user
+    set_banner
   end
 
   def save_html_content

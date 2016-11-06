@@ -2,15 +2,15 @@ class GalleriesController < ApplicationController
   before_action :authenticate_user!, :only => [:destroy]
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.where(banner: false)
   end
 
   def show_residential
-    @pictures = Picture.where(market: 'residential')
+    @pictures = Picture.where(market: 'residential', banner: false)
   end
 
   def show_commercial
-    @pictures = Picture.where(market: 'commercial')
+    @pictures = Picture.where(market: 'commercial', banner: false)
   end
 
   def destroy

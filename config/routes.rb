@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'pictures/index', to: 'pictures#index'
   post 'pictures/create', to: 'pictures#create'
+  post 'pictures/create_banner', to: 'pictures#create_banner'
 
   get 'galleries/index', to: 'galleries#index'
   get 'galleries/show_residential', to: 'galleries#show_residential'
