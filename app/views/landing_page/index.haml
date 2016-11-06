@@ -4,6 +4,20 @@
     %span{style: "position: relative; top: -50px"}= image_tag("logo.png", size:'391x284')
   -#%p
     -#%a{class:"btn btn-primary btn-lg", href:"#", role:"button"} Get A Quote
+- if can? :manage, :all
+  .banner_form
+    .edit_title Edit Banner Image
+    .edit_body
+      = form_for Picture.new, url: pictures_create_path, html: { class: 'banner_upload', multipart: true } do |f|
+        .field
+          = f.file_field :image
+        .field
+          = f.radio_button(:market, "residential")
+          = f.label(:residential, "Residential")
+          = f.radio_button(:market, "commercial")
+          = f.label(:commercial, "Commercial")
+        .actions
+          = f.submit 'Upload Picture'
 .main_slider{style:'display: none'}
   = image_tag("residential/sm_shower_1.png", class: "main_slider_image")
   = image_tag("residential/sm_shower_2.png", class: "main_slider_image")

@@ -21,6 +21,29 @@
   background-color: $anderson-black;
 }
 
+.banner_form {
+  position: absolute;
+  top: 300px;
+  right: 10px;
+  width: 215px;
+  background-color: rgba(245, 245, 245, .9);
+  border: 1px solid rgb(85, 85, 85);
+  border-radius: 3px;
+  .edit_title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(190, 190, 190);
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #aaa;
+  }
+  .edit_body {
+    margin: 0 10px;
+  }
+}
+
+.banner_upload {}
+
 .section_header {
   margin-top: 60px;
   color: $anderson-white;
