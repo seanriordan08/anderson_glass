@@ -66,6 +66,9 @@ body .bg {
   @media screen and (min-width: 1497px) { background-size: cover; }
   top: 0;
   left: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   z-index: -1;
 }
 
