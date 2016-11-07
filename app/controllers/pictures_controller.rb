@@ -30,7 +30,7 @@ class PicturesController < ApplicationController
       flash[:success] = 'Banner Updated'
       set_section_content
       set_banner
-      render 'landing_page/index.haml'
+      redirect_to root_path
     else
       flash[:error] = @picture.errors.messages.values.flatten.first
       set_banner
@@ -42,11 +42,13 @@ class PicturesController < ApplicationController
   private
 
   def update_banner(picture)
-    Picture.where(banner: true).update_all(banner: false)
+    old_banner_id = Picture.where(banner: true).first.id
+    Picture.destroy(old_banner_id)
+
     picture.update(banner: true)
   end
 
   def picture_params
-    params.require(:picture).permit(:image, :market)
+    params.require(:picture).permit(:image, :market, :banner)
   end
 end

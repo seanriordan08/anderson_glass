@@ -1,6 +1,6 @@
 PAPERCLIP_STORAGE_OPTS = {
   path: Rails.root.join('pictures', ':style', ':filename' ).to_s,
-  styles: { :original => '192x192', :thumb => { geometry: "192x192>", jcrop: true} }, # :banner => "1497x589>", medium: "300x300>",
+  styles: { :banner => "800x400>", :original => '192x192', :thumb => { geometry: "192x192>", jcrop: true} }, # :banner => "1497x589>", medium: "300x300>",
   :convert_options => { :all => '-strip', :original => '-quality 50', :thumb => '-quality 80' },
   s3_headers: { Expires: 1.year.from_now.httpdate },
   storage: :s3,

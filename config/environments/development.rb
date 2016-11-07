@@ -1,5 +1,5 @@
 PAPERCLIP_STORAGE_OPTS = {
-  styles: { :banner => "1497x589>", medium: "300x300>", :thumb => "192x192>" }
+  styles: { :banner => "800x400>", :thumb => "192x192>" }
 }
 
 Rails.application.configure do
