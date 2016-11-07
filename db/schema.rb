@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106025050) do
+ActiveRecord::Schema.define(version: 20161107031654) do
 
   create_table "pictures", force: :cascade do |t|
     t.datetime "created_at",                                     null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161106025050) do
     t.string   "name",               limit: 255
     t.string   "market",             limit: 255,                 null: false
     t.boolean  "banner",                         default: false
+    t.boolean  "project",                        default: false
   end
 
   create_table "section_contents", force: :cascade do |t|

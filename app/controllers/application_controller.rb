@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     @banner = Picture.where(banner: true).first
   end
 
+  def set_project
+    @project = Picture.where(project: true).first
+  end
+
 end

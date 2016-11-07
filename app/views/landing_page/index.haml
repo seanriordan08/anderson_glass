@@ -82,9 +82,23 @@
     .section_content
       = render partial: "shared/html_content", locals: { content: @projects_contents }
   .col-sm-12.col-md-6{style:'height: 400px;'}
-    .faded_container
-      = image_tag("#{image_path('quality.jpg')}", size:'', class:'faded')
+    .faded_container{style: "background-image: url(#{@project.image.url(:original)})"}
+      -#= image_tag("#{image_path('quality.jpg')}", size:'', class:'faded')
       .after
+  .project_edit_wrapper{style:"position: relative"}
+    - if can? :manage, :all
+      .project_form
+        .edit_title
+          Edit Project Image
+        .edit_body
+          = form_for Picture.new, url: pictures_create_project_path, html: { class: 'banner_upload', multipart: true } do |f|
+            .field
+              = f.file_field :image
+            .field
+              = f.hidden_field :market, value: 'residential'
+            .actions
+              = f.submit 'Upload Picture'
+              %span{style: 'font-size: 12px'}
 
 .row.section_wrapper.black.wysihtml_editable
   %h1.section_header Locations

@@ -1,9 +1,10 @@
 class LandingPageController < ApplicationController
 
   def index
-    set_section_content
     @current_user = current_user
+    set_section_content
     set_banner
+    set_project
   end
 
   def save_html_content
