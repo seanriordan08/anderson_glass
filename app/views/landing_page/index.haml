@@ -33,7 +33,7 @@
 
 .row.section_wrapper{style:'height: 800px'}
   - if can? :manage, :all
-    %h1.section_header_dark{style: "margin-top: 0", contenteditable:'true'} Services
+    %h1.section_header_dark{name: 'section_one', style: "margin-top: 0", contenteditable:'true'} Services
   - else
     %h1.section_header_dark{style: "margin-top: 0; outline: 0"} Services
   .container
@@ -87,7 +87,7 @@
 
 .row.section_wrapper.dark-blue.wysihtml_editable
   - if can? :manage, :all
-    %h1.section_header{contenteditable:'true'} Projects
+    %h1.section_header{name: 'section_two', contenteditable:'true'} Projects
   - else
     %h1.section_header Projects
   .container
@@ -116,7 +116,7 @@
 
 .row.section_wrapper.black.wysihtml_editable
   - if can? :manage, :all
-    %h1.section_header{contenteditable: 'true'} Locations
+    %h1.section_header{name: 'section_three', contenteditable: 'true'} Locations
   - else
     %h1.section_header Locations
   .container
@@ -134,10 +134,12 @@
 
     $('.wysihtml_editable').each(function() {
       var parent_section = $(this).closest('.section_wrapper');
-      var section_name = parent_section.find('.section_header').text().toLowerCase();
 
-      var textarea_id = "wysihtml-textarea-" + section_name;
-      var toolbar_id = "wysihtml-toolbar-" + section_name;
+      var section_name = parent_section.find('.section_header').attr("name");
+      var real_section_name = getSectionName(section_name);
+
+      var textarea_id = "wysihtml-textarea-" + real_section_name;
+      var toolbar_id = "wysihtml-toolbar-" + real_section_name;
 
       var admin_logged_in = "#{@current_user.first_name if @current_user.present?}";
 
@@ -148,7 +150,18 @@
           stylesheets: ["#{asset_path('application.css')}"]
         });
       }
-
     });
-
   });
+
+  function getSectionName(section_name){
+    switch(section_name) {
+      case 'section_one':
+        return 'services'
+        break;
+      case 'section_two':
+        return 'projects'
+        break;
+      default:
+        return 'locations'
+    }
+  }

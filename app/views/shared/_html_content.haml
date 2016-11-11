@@ -22,16 +22,17 @@
   $("#html_content_save-#{content.name}").on('click', function(){
 
     var parent_section = $(this).closest('.section_wrapper');
-    var section_name = parent_section.find('.section_header').text().toLowerCase();
+    var section_name = parent_section.find('.section_header').attr("name");
+    var real_section_name = getSectionName(section_name);
 
-    var textarea_id = "wysihtml-textarea-" + section_name;
-    var toolbar_id = "wysihtml-toolbar-" + section_name;
+    var textarea_id = "wysihtml-textarea-" + real_section_name;
+    var toolbar_id = "wysihtml-toolbar-" + real_section_name;
     var html_content = $("#"+textarea_id).html();
 
     $.ajax({
       url: "#{landing_page_save_html_content_path}",
       method: 'PUT',
-      data: { section_name: section_name, html_content: html_content },
+      data: { section_name: real_section_name, html_content: html_content },
       dataType: 'script',
       error: function(){
         $.notify({
@@ -49,3 +50,16 @@
       }
     })
   })
+
+  function getSectionName(section_name){
+    switch(section_name) {
+      case 'section_one':
+        return 'services'
+        break;
+      case 'section_two':
+        return 'projects'
+        break;
+      default:
+        return 'locations'
+    }
+  }
