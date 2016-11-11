@@ -62,14 +62,6 @@
                         $(uelement).find('.info-slide').remove();
                     });
 
-                    //infoDeferido.hover(function(){
-                    //    $(uelement).find('.switch-content').addClass('disable');
-                    //    $(uelement).find('.switch-content').removeClass('initial');
-                    //}, function(){
-                    //    $(uelement).find('.switch-content').addClass('initial');
-                    //    $(uelement).find('.switch-content').removeClass('disable');
-                    //});
-                    
                     infoIndeferido.click(function(){
                         var checkbox = $(uelement).find('input');                        
                         checkbox.val($(checkbox).attr('unchecked-value'));

@@ -1,5 +1,20 @@
 
 $(document).on('ready', function(){
+
+  var filter = getFilter(document.location.search);
+  var checkbox = $(this).find('input');
+  if (filter == 'residential') {
+    $(this).find('.switch-content.active').removeClass('active');
+    $(this).find('.switch-content').addClass('disable');
+    $(checkbox).attr('value', 2);
+    $( ".multi_switch_hook" ).trigger('change', 'disable');
+  } else if (filter == 'commercial') {
+    $(this).find('.switch-content.initial').removeClass('initial');
+    $(this).find('.switch-content').addClass('active');
+    $(checkbox).attr('value', 1);
+    $( ".multi_switch_hook" ).trigger('change', 'active');
+  }
+
   var gallery_picture = $('.gallery_picture');
   var gallery_image = $('.gallery_image');
   var gallery_overlay = $('.gallery_overlay');
@@ -45,6 +60,12 @@ $(document).on('ready', function(){
     })
   }
 });
+
+function getFilter(filter) {
+  filter = filter.split('?filter=').join('');
+
+  return filter;
+}
 
 $(document).on('change', $('.multi_switch_hook'), function(e, state){
   if (state == 'disable') {

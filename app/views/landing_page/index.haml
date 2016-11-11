@@ -62,7 +62,7 @@
                 %td{style:'float: right'}
                   %span{class:'glyphicon glyphicon-ok-sign'}
         %p.thumb_button
-          %a.btn.btn-primary{:href => "#{galleries_index_path}", :role => "button"} View Residential Work
+          %a.btn.btn-primary{:href => "#{galleries_index_path}?filter=residential", :role => "button"} View Residential Work
   .col-sm-6.col-lg-4
     .thumbnail
       .square_hover
@@ -83,7 +83,7 @@
                 %td{style:'float: right'}
                   %span{class:'glyphicon glyphicon-ok-sign'}
         %p.thumb_button
-          %a.btn.btn-primary{:href => "#{galleries_index_path}", :role => "button"} View Commercial Work
+          %a.btn.btn-primary{:href => "#{galleries_index_path}?filter=commercial", :role => "button"} View Commercial Work
 
 .row.section_wrapper.dark-blue.wysihtml_editable
   - if can? :manage, :all
