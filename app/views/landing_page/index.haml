@@ -32,21 +32,30 @@
   = image_tag("residential/sm_shower_3.png", class: "main_slider_image")
 
 .row.section_wrapper{style:'height: 800px'}
-  %h1.section_header_dark{style: "margin-top: 0"} Describe Your Project
+  - if can? :manage, :all
+    %h1.section_header_dark{style: "margin-top: 0", contenteditable:'true'} Services
+  - else
+    %h1.section_header_dark{style: "margin-top: 0; outline: 0"} Services
   .container
-    %hr
+    %hr{style: 'color: black'}
   %br\
   .col-sm-6.col-lg-offset-2.col-lg-4
     .thumbnail
       .square_hover
         = image_tag("residential_market.jpg", size:'320x240')
       .caption
-        %h3 Residential
+        - if can? :manage, :all
+          %h3{contenteditable: 'true'} Residential
+        - else
+          %h3 Residential
         .table_wrapper{style:'overflow: auto'}
           %table.market_table
             - @residential_services.each do |service|
               %tr{class:"#{cycle('','light-gray')}"}
-                %td{style:'float: left'}= service
+                - if can? :manage, :all
+                  %td{style:'float: left', contenteditable: 'true'}= service
+                - else
+                  %td{style:'float: left'}= service
           %table{style:'float:right; margin: 20px 0; text-align: right'}
             - @residential_services.size.times do
               %tr
@@ -59,7 +68,10 @@
       .square_hover
         = image_tag("commercial_market.jpg", size:'320x240')
       .caption
-        %h3 Commercial
+        - if can? :manage, :all
+          %h3{contenteditable: 'true'} Commercial
+        - else
+          %h3 Commercial
         .table_wrapper{style:'overflow: auto'}
           %table.market_table
             - @commercial_services.each do |service|
@@ -74,7 +86,10 @@
           %a.btn.btn-primary{:href => "#{galleries_index_path}", :role => "button"} View Commercial Work
 
 .row.section_wrapper.dark-blue.wysihtml_editable
-  %h1.section_header Projects
+  - if can? :manage, :all
+    %h1.section_header{contenteditable:'true'} Projects
+  - else
+    %h1.section_header Projects
   .container
     %hr
   %br\
@@ -83,7 +98,6 @@
       = render partial: "shared/html_content", locals: { content: @projects_contents }
   .col-sm-12.col-md-6{style:'height: 400px;'}
     .faded_container{style: "background-image: url(#{@project.image.url(:original)})"}
-      -#= image_tag("#{image_path('quality.jpg')}", size:'', class:'faded')
       .after
   .project_edit_wrapper{style:"position: relative"}
     - if can? :manage, :all
@@ -101,7 +115,10 @@
               %span{style: 'font-size: 12px'}
 
 .row.section_wrapper.black.wysihtml_editable
-  %h1.section_header Locations
+  - if can? :manage, :all
+    %h1.section_header{contenteditable: 'true'} Locations
+  - else
+    %h1.section_header Locations
   .container
     %hr
   %br\

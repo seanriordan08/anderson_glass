@@ -68,7 +68,7 @@
 }
 
 .section_header {
-  margin-top: 60px;
+  margin-top: 40px;
   color: $anderson-white;
   text-align: center;
   text-shadow: 1px 1px 2px #333;
@@ -206,6 +206,10 @@ body .main_slider {
     bottom: 0;
     width: 100%;
     text-align: center;
+  }
+
+  p.thumb_button {
+    margin: 0 0 18px 0;
   }
 }
 .caption h3 {
