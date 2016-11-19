@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'pictures/create', to: 'pictures#create'
   post 'pictures/create_banner', to: 'pictures#create_banner'
   post 'pictures/create_project', to: 'pictures#create_project'
+  post 'pictures/create_featured', to: 'pictures#create_featured'
 
   get 'galleries/index', to: 'galleries#index'
   get 'galleries/show_residential', to: 'galleries#show_residential'

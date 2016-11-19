@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
     @project = Picture.where(project: true).first
   end
 
+  def set_featured
+    @featured_residential = Picture.where(featured: true).where(market: 'residential').first
+    @featured_commercial = Picture.where(featured: true).where(market: 'commercial').first
+  end
+
 end
