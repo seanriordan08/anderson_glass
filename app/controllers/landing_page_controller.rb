@@ -5,6 +5,7 @@ class LandingPageController < ApplicationController
     set_section_content
     set_banner
     set_project
+    set_featured
   end
 
   def save_html_content

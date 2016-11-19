@@ -42,7 +42,8 @@
             = f.submit 'Upload'
             %span{style: 'font-size: 12px'}
       .square_hover
-        = image_tag("residential_market.jpg", size:'320x240')
+        .featured_image{style: "background-image: url(#{@featured_residential.image.url(:original)})"}
+        -#= image_tag("residential_market.jpg", size:'320x240')
       .caption
         - if can? :manage, :all
           %h3{contenteditable: 'true'} Residential
@@ -66,7 +67,8 @@
   .col-sm-6.col-lg-4
     .thumbnail
       .square_hover
-        = image_tag("commercial_market.jpg", size:'320x240')
+        .featured_image{style: "background-image: url(#{@featured_commercial.image.url(:original)})"}
+        -#= image_tag("commercial_market.jpg", size:'320x240')
         - if can? :manage, :all
           = form_for Picture.new, url: pictures_create_featured_path, html: { class: 'featured_upload_right', multipart: true } do |f|
             .field.choose_file
@@ -116,7 +118,7 @@
         .edit_title
           Edit Project Image
         .edit_body
-          = form_for Picture.new, url: pictures_create_project_path, html: { class: 'banner_upload', multipart: true } do |f|
+          = form_for Picture.new, url: pictures_create_project_path, html: { class: 'project_upload', multipart: true } do |f|
             .field
               = f.file_field :image
             .field

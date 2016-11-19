@@ -94,8 +94,7 @@ class PicturesController < ApplicationController
   end
 
   def update_featured(picture)
-    binding.pry
-    if params[:residential]
+    if params[:picture][:market] == 'residential'
       old_featured_residential_id = Picture.where(featured: true).where(market: 'residential').first.id
       Picture.destroy(old_featured_residential_id)
     else
