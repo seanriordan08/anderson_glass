@@ -33,9 +33,9 @@
 
 .row.section_wrapper{style:'height: 800px'}
   - if can? :manage, :all
-    %h1.section_header_dark{name: 'section_one', style: "margin-top: 0", contenteditable:'true'} Services
+    %h1.section_header_dark{name: 'section_one', style: "margin-top: 0", contenteditable:'true'} Projects
   - else
-    %h1.section_header_dark{style: "margin-top: 0; outline: 0"} Services
+    %h1.section_header_dark{style: "margin-top: 0; outline: 0"} Projects
   .container
     %hr{style: 'color: black'}
   %br\
@@ -87,9 +87,9 @@
 
 .row.section_wrapper.dark-blue.wysihtml_editable
   - if can? :manage, :all
-    %h1.section_header{name: 'section_two', contenteditable:'true'} Projects
+    %h1.section_header{name: 'section_two', contenteditable:'true'} About Us
   - else
-    %h1.section_header Projects
+    %h1.section_header About Us
   .container
     %hr
   %br\
