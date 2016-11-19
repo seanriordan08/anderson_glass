@@ -35,6 +35,8 @@
       = f.label(:residential, "Residential")
       = f.radio_button(:market, "commercial")
       = f.label(:commercial, "Commercial")
+    .field
+      -#= f.checkbox
     .actions
       = f.submit 'Upload Picture'
 

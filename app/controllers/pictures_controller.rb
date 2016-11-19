@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
 
   def index
-    @pictures = Picture.where(banner: false)
+    @pictures = Picture.where(banner: false).where(project: false)
     render galleries_index_path
   end
 
@@ -11,14 +11,11 @@ class PicturesController < ApplicationController
 
     if @picture.save
       flash[:success] = 'Image Added'
-      set_section_content
-      set_banner
+      setup_images({content:true, banner:true, project:false})
       redirect_to action: 'index'
     else
       flash[:error] = @picture.errors.messages.values.flatten.first
-      set_section_content
-      set_banner
-      set_project
+      setup_images({content:true, banner:true, project:true})
       redirect_to action: 'index'
     end
   end
@@ -28,15 +25,12 @@ class PicturesController < ApplicationController
 
     if @picture.save
       update_banner(@picture)
-      flash[:success] = 'Banner Updated'
-      set_section_content
-      set_banner
-      set_project
+      flash[:success] = 'Banner Image Updated'
+      setup_images({content:true, banner:true, project:true})
       redirect_to root_path
     else
       flash[:error] = @picture.errors.messages.values.flatten.first
-      set_banner
-      set_project
+      setup_images({content:false, banner:true, project:true})
       render nothing: true
     end
   end
@@ -46,21 +40,24 @@ class PicturesController < ApplicationController
 
     if @picture.save
       update_project(@picture)
-      flash[:success] = 'Banner Updated'
-      set_section_content
-      set_banner
-      set_project
+      flash[:success] = 'Project Image Updated'
+      setup_images({content:true, banner:true, project:true})
       redirect_to root_path
     else
       flash[:error] = @picture.errors.messages.values.flatten.first
-      set_banner
-      set_project
+      setup_images({content:false, banner:true, project:true})
       render nothing: true
     end
   end
 
 
   private
+
+  def setup_images(options)
+    set_section_content if options[:content]
+    set_banner if options[:banner]
+    set_project if options[:project]
+  end
 
   def update_banner(picture)
     old_banner_id = Picture.where(banner: true).first.id

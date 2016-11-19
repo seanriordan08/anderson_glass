@@ -13,11 +13,13 @@ last_names = %w(example_last_name smith johnson reynolds shears)
 raise "First names must all have last names!" unless (first_names.size == last_names.size)
 
 first_names.each_with_index do |first_name, index|
+  user_role = (index == 0) ? 'admin' : 'guest'
   User.create_with(
     first_name: first_name,
     last_name: last_names[index],
     email: "#{first_name}@example.com",
-    password: 'password'
+    password: 'password',
+    role: user_role
   ).find_or_create_by!(email: "#{first_name}@example.com")
 end
 
@@ -42,15 +44,19 @@ end
 # Add services
 residential_services = ['Frameless shower enclosures','Custom shower doors','Tub enclosures','Beveling','Tempered glass','Insulated glass','Table tops','Mirrors', 'Laminated glass']
 commercial_services = ['Storefronts', 'Curtain walls', 'Automatic doors', 'Glass Entrances and doors', 'Custom glass walls', 'Total glass doors', 'Glass railings', 'Tempered glass', 'Aluminum panels']
-residential_services.each do |s|
+residential_services.each_with_index do |s, index|
+  is_first = (index == 0)
   Service.create_with(
     description: s,
-    market_type: 'residential'
+    market_type: 'residential',
+    featured: is_first
   ).find_or_create_by!(description: s)
 end
-commercial_services.each do |s|
+commercial_services.each_with_index do |s, index|
+  is_first = (index == 0)
   Service.create_with(
     description: s,
-    market_type: 'commercial'
+    market_type: 'commercial',
+    featured: is_first
   ).find_or_create_by!(description: s)
 end
