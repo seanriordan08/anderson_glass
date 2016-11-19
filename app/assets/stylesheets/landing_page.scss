@@ -211,6 +211,63 @@ body .main_slider {
   p.thumb_button {
     margin: 0 0 18px 0;
   }
+
+  .featured_upload_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+    .field {
+      margin: 0;
+    }
+    .actions {
+      margin-top: 10px;
+    }
+    .choose_file {
+      width: 100px;
+      height: 46px;
+      margin-right: 4px;
+      cursor: default;
+      input[type="file"] {
+        position: relative;
+        top: 25px;
+        left: 10px;
+        width: 90px;
+        height: 26px;
+        opacity: 0;
+      }
+    }
+  }
+  .featured_upload_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: right;
+    .field {
+      margin: 0;
+    }
+    .actions {
+      margin-top: 10px;
+    }
+    .choose_file {
+      width: 100px;
+      height: 46px;
+      margin-right: 4px;
+      cursor: default;
+      input[type="file"] {
+        position: relative;
+        top: 25px;
+        right: 10px;
+        width: 90px;
+        height: 26px;
+        opacity: 0;
+      }
+    }
+  }
 }
 .caption h3 {
   margin: 10px 0 0 0;

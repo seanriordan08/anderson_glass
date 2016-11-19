@@ -6,11 +6,11 @@ class GalleriesController < ApplicationController
   end
 
   def show_residential
-    @pictures = Picture.where(market: 'residential', banner: false)
+    @pictures = Picture.where(market: 'residential')
   end
 
   def show_commercial
-    @pictures = Picture.where(market: 'commercial', banner: false)
+    @pictures = Picture.where(market: 'commercial')
   end
 
   def destroy
